@@ -1,7 +1,6 @@
-import './App.css';
-import ChangeName from './changeName';
-import GradeToLetter from './gradeToLetter'
-import ChangeDate from './changeDate'
+import ChangeName from './changeName'
+import ChangeDate from './changeDate';
+import GradeToLetter from './gradeToLetter';
 import { useState } from 'react';
 import Papa from 'papaparse'
 
@@ -69,6 +68,45 @@ function App() {
               <tr key={index}>
                 {value.map((val, i) => {
                   return <td key={i}>{val}</td>;
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            {tableRows.map((rows, indx) => {
+              return <th key={indx}>{rows}</th>;
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {values.map((value, index) => {
+            return (
+              <tr key={index}>
+                {value.map((val, j) => {
+                  
+                  let newValue = val
+                  if(j == 1)
+                  {
+                    newValue = ChangeName(val)
+                  }
+                  else if(j == 2)
+                  {
+                    newValue = val + '@tec.mx'
+                  }
+                  else if(j == 3)
+                  {
+                    newValue = ChangeDate(val)
+                  }
+                  else if(j == 4)
+                  {
+                    newValue = GradeToLetter(val)
+                  }
+                  return <td key={j}>{newValue}</td>;
                 })}
               </tr>
             );
