@@ -3,6 +3,7 @@ import ChangeDate from './changeDate';
 import GradeToLetter from './gradeToLetter';
 import { useState } from 'react';
 import Papa from 'papaparse'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // State to store parsed data
@@ -42,7 +43,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='container'>
       {/* File Uploader */}
       <input
         type="file"
@@ -54,7 +55,7 @@ function App() {
       <br />
       <br />
       {/* Table */}
-      <table>
+      <table className='table'>
         <thead>
           <tr>
             {tableRows.map((rows, index) => {
@@ -75,7 +76,7 @@ function App() {
         </tbody>
       </table>
 
-      <table>
+      <table className='table'>
         <thead>
           <tr>
             {tableRows.map((rows, indx) => {
