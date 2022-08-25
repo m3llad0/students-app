@@ -55,7 +55,7 @@ function App() {
       <br />
       <br />
       {/* Table */}
-      <table className='table'>
+      <table className='table' data-testid = 'initial-table'>
         <thead>
           <tr>
             {tableRows.map((rows, index) => {
@@ -76,7 +76,7 @@ function App() {
         </tbody>
       </table>
 
-      <table className='table'>
+      <table className='table' data-testid = 'changed-table'>
         <thead>
           <tr>
             {tableRows.map((rows, indx) => {
